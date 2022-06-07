@@ -23,7 +23,10 @@ const ProductDisplay = ({product}) => {
     <Card.Footer>
         {/*product를 비교해서 가져와야함. 아래는 전체를 가져오는 코드*/}
         {
-            data.state.comments.map(comment=> <li key={comment.id}>{comment.user} : {comment.commentText}</li>)
+            data.state.comments.map(comment=> <li key={comment.id}>
+                {comment.user} : {comment.commentText}
+                <div id='img_box' style={{width:'100px', height:'50px', backgroundImage:`url(${comment.commentIMG})`}}></div>
+            </li>)
         }
         
     </Card.Footer>
